@@ -1,6 +1,8 @@
 # Python-generated files
 __pycache__/
 *.py[oc]
+list.txt
+output.mp4
 build/
 output/
 dist/
