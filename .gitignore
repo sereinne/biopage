@@ -1,17 +1,3 @@
-# Python-generated files
-__pycache__/
-*.py[oc]
-list.txt
-output.mp4
-build/
-output/
-dist/
-wheels/
-*.egg-info
-
-# Virtual environments
-.venv
-
 # dotenv environment variable files
 .env
 .env.development.local
