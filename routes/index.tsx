@@ -1,4 +1,78 @@
 export default function Home() {
+  type technology = {
+    iconPath: string;
+    desc: string;
+    url: string;
+  };
+
+  const technologies: Array<technology> = [
+    {
+      iconPath: "/linux.svg",
+      desc: "Linux",
+      url: "https://github.com/torvalds/linux",
+    },
+    {
+      iconPath: "/nodejs.svg",
+      desc: "NodeJS",
+      url: "https://nodejs.org",
+    },
+    {
+      iconPath: "/deno.svg",
+      desc: "Deno",
+      url: "https://deno.com",
+    },
+    {
+      iconPath: "/rust.svg",
+      desc: "Rust",
+      url: "https://rust-lang.org/",
+    },
+    {
+      iconPath: "/python.svg",
+      desc: "Python",
+      url: "https://python.org",
+    },
+    {
+      iconPath: "/zig.svg",
+      desc: "Zig",
+      url: "https://ziglang.org/",
+    },
+    {
+      iconPath: "/bash.svg",
+      desc: "Bash",
+      url: "https://ftp.gnu.org/gnu/bash",
+    },
+    {
+      iconPath: "/git.svg",
+      desc: "Git",
+      url: "https://git-scm.com",
+    },
+    {
+      iconPath: "/js.svg",
+      desc: "JavaScript",
+      url: "https://developer.mozilla.org",
+    },
+    {
+      iconPath: "/ts.svg",
+      desc: "TypeScript",
+      url: "https://typescriptlang.org",
+    },
+    {
+      iconPath: "/html.svg",
+      desc: "HTML",
+      url: "https://w3schools.com",
+    },
+    {
+      iconPath: "/css.svg",
+      desc: "CSS",
+      url: "https://w3schools.com",
+    },
+    {
+      iconPath: "/docker.svg",
+      desc: "Docker",
+      url: "https://docker.com",
+    },
+  ];
+
   return (
     <div className="homepage bg-[#EDCB96]">
       <header>
@@ -40,17 +114,19 @@ export default function Home() {
             Technologies
           </header>
           <hr class="bg-[#524632] h-0.5 rounded-md border-0 my-2 mx-1" />
-          <div className="tech-stack-grid">
-            <a href="https://git-scm.com">
-              <div className="tech-stack border-4 rounded-md border-[#524632] px-2 py-1 inline-block hover:bg-[#7ee8fa] hover:-top-px">
-                <header>
-                  <img src="/git.svg" class="size-8" />
-                </header>
-                <footer class="text-center font-semibold">
-                  Git
-                </footer>
-              </div>
-            </a>
+          <div className="tech-stack-grid grid gap-2 grid-cols-3">
+            {technologies.map((tech) => {
+              return (
+                <a href={tech.url}>
+                  <div className="tech-stack flex flex-col justify-center align-center gap-x-2 border-4 rounded-md border-[#524632] duration-200 hover:bg-[#468c49] hover:text-[#EDCB96] hover:-translate-y-1">
+                    <img src={tech.iconPath} class="size-8 mx-auto my-0.5" />
+                    <footer class="text-center font-semibold bg-[#524632] text-[#edcb96]">
+                      {tech.desc}
+                    </footer>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
       </main>
