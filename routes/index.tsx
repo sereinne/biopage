@@ -5,6 +5,30 @@ export default function Home() {
     url: string;
   };
 
+  type repository = {
+    name: string;
+    desc: string;
+    url: string;
+  };
+
+  const repositories: Array<repository> = [
+    {
+      name: "gummypy",
+      desc: "A simple library that contains wrapper functions for gum CLI tool",
+      url: "https://github.com/sereinne/gummypy",
+    },
+    {
+      name: "szlog",
+      desc: "simple structured logging library in zig",
+      url: "https://github.com/sereinne/szlog",
+    },
+    {
+      name: "manimations",
+      desc: "source code for all of my manim animations",
+      url: "https://github.com/sereinne/manimations",
+    },
+  ];
+
   const frameworks: Array<technology> = [
     {
       iconPath: "/logo.svg",
@@ -115,6 +139,33 @@ export default function Home() {
             Projects
           </header>
           <hr class="bg-[#524632] h-0.5 rounded-md border-0 my-2 mx-1" />
+          <div className="projects-container flex flex-col gap-y-3">
+            {repositories.map((repo) => {
+              return (
+                <div className="project duration-200 border-2 border-[#524632] rounded-md flex hover:bg-[#468c49] hover:cursor-pointer hover:-translate-y-1">
+                  <div class="icon-container bg-[#524632] px-1 flex flex-col justify-center">
+                    <img
+                      src="/library-icon.svg"
+                      class="size-8"
+                      alt=""
+                    />
+                  </div>
+                  <div className="project-metadata">
+                    <header class="font-bold ml-2 py-1">
+                      <a href={repo.url} target="_blank">
+                        <u>
+                          {repo.name}
+                        </u>
+                      </a>
+                    </header>
+                    <p class="font-semibold ml-2 py-1">
+                      {repo.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
         <div className="contributions">
           <header class="font-bold text-4xl text-center">
@@ -130,7 +181,7 @@ export default function Home() {
           <div className="dev-tools-grid grid gap-2 grid-cols-3">
             {developerTools.map((devtool) => {
               return (
-                <a href={devtool.url}>
+                <a href={devtool.url} target="_blank">
                   <div className="dev-tool flex flex-col justify-center align-center gap-x-2 border-4 rounded-md border-[#524632] duration-200 hover:bg-[#468c49] hover:text-[#EDCB96] hover:-translate-y-1">
                     <img src={devtool.iconPath} class="size-8 mx-auto my-0.5" />
                     <footer class="text-center font-semibold bg-[#524632] text-[#edcb96]">
@@ -150,7 +201,7 @@ export default function Home() {
           <div className="programming-languages-grid grid gap-2 grid-cols-3">
             {languages.map((language) => {
               return (
-                <a href={language.url}>
+                <a href={language.url} target="_blank">
                   <div className="programming-language flex flex-col justify-center align-center gap-x-2 border-4 rounded-md border-[#524632] duration-200 hover:bg-[#468c49] hover:text-[#EDCB96] hover:-translate-y-1">
                     <img
                       src={language.iconPath}
@@ -173,7 +224,7 @@ export default function Home() {
           <div className="frameworks-grid grid gap-2 grid-cols-3">
             {frameworks.map((framework) => {
               return (
-                <a href={framework.url}>
+                <a href={framework.url} target="_blank">
                   <div className="framework-grid flex flex-col justify-center align-center gap-x-2 border-4 rounded-md border-[#524632] duration-200 hover:bg-[#468c49] hover:text-[#EDCB96] hover:-translate-y-1">
                     <img
                       src={framework.iconPath}
@@ -196,22 +247,25 @@ export default function Home() {
           </p>
           <ul className="more-about flex flex-row gap-x-3">
             <li>
-              <a href="https://github.com/sereinne">
+              <a href="https://github.com/sereinne" target="_blank">
                 <img src="/github.svg" class="size-8" />
               </a>
             </li>
             <li>
-              <a href="mailto:akbarpersonalmode@gmail.com">
+              <a href="mailto:akbarpersonalmode@gmail.com" target="_blank">
                 <img src="/mail.svg" class="size-8" />
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/muhamnad-akbar-ilman-setijadi-405022246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+              <a
+                href="https://www.linkedin.com/in/muhamnad-akbar-ilman-setijadi-405022246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank"
+              >
                 <img src="/linkedin.svg" class="size-8" />
               </a>
             </li>
             <li>
-              <a href="https://instagram.com/akbarilmnn">
+              <a href="https://instagram.com/akbarilmnn" target="_blank">
                 <img src="/instagram.svg" class="size-8" />
               </a>
             </li>
