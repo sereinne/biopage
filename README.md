@@ -1,16 +1,13 @@
-# Fresh project
+# Homepage
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
+My Personal homepage / bio site.
 
-### Usage
+## Development
 
-Make sure to install Deno: https://deno.land/manual/getting_started/installation
+Run the server (make sure you are in the root of the repository)
 
-Then start the project:
-
-```
+```sh
 deno task start
 ```
 
-This will watch the project directory and restart as necessary.
+Access locally from this url `http://localhost:8000` and start editing your code!
