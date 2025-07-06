@@ -1,132 +1,26 @@
+import { ProjectCard } from "../components/ProjectCard.tsx";
+import { TechStackCard } from "../components/TechStackCard.tsx";
+import {
+  developerTools,
+  frameworks,
+  languages,
+  repositories,
+} from "../constants.ts";
+
 export default function Home() {
-  type technology = {
-    iconPath: string;
-    desc: string;
-    url: string;
-  };
-
-  type repository = {
-    name: string;
-    desc: string;
-    url: string;
-  };
-
-  const repositories: Array<repository> = [
-    {
-      name: "gummypy",
-      desc: "A simple library that contains wrapper functions for gum CLI tool",
-      url: "https://github.com/sereinne/gummypy",
-    },
-    {
-      name: "szlog",
-      desc: "simple structured logging library in zig",
-      url: "https://github.com/sereinne/szlog",
-    },
-    {
-      name: "manimations",
-      desc: "source code for all of my manim animations",
-      url: "https://github.com/sereinne/manimations",
-    },
-  ];
-
-  const frameworks: Array<technology> = [
-    {
-      iconPath: "/logo.svg",
-      desc: "Fresh",
-      url: "https://fresh.deno.dev",
-    },
-    {
-      iconPath: "/tailwindcss.svg",
-      desc: "TailwindCSS",
-      url: "https://tailwindcss.com",
-    },
-  ];
-
-  const languages: Array<technology> = [
-    {
-      iconPath: "/rust.svg",
-      desc: "Rust",
-      url: "https://rust-lang.org/",
-    },
-    {
-      iconPath: "/python.svg",
-      desc: "Python",
-      url: "https://python.org",
-    },
-    {
-      iconPath: "/zig.svg",
-      desc: "Zig",
-      url: "https://ziglang.org/",
-    },
-    {
-      iconPath: "/js.svg",
-      desc: "JavaScript",
-      url: "https://developer.mozilla.org",
-    },
-    {
-      iconPath: "/ts.svg",
-      desc: "TypeScript",
-      url: "https://typescriptlang.org",
-    },
-    {
-      iconPath: "/html.svg",
-      desc: "HTML",
-      url: "https://w3schools.com",
-    },
-    {
-      iconPath: "/css.svg",
-      desc: "CSS",
-      url: "https://w3schools.com",
-    },
-  ];
-
-  const developerTools: Array<technology> = [
-    {
-      iconPath: "/linux.svg",
-      desc: "Linux",
-      url: "https://github.com/torvalds/linux",
-    },
-    {
-      iconPath: "/deno.svg",
-      desc: "Deno",
-      url: "https://deno.com",
-    },
-    {
-      iconPath: "/nodejs.svg",
-      desc: "NodeJS",
-      url: "https://nodejs.org",
-    },
-
-    {
-      iconPath: "/bash.svg",
-      desc: "Bash/zsh/fish",
-      url: "https://ftp.gnu.org/gnu/bash",
-    },
-    {
-      iconPath: "/git.svg",
-      desc: "Git",
-      url: "https://git-scm.com",
-    },
-    {
-      iconPath: "/docker.svg",
-      desc: "Docker",
-      url: "https://docker.com",
-    },
-  ];
-
   return (
-    <div className="homepage bg-[#EDCB96]">
+    <div className="homepage bg-lightbeige">
       <header>
         <video autoplay loop>
           <source src="/new-output.mp4" />
         </video>
       </header>
-      <main class="bg-[#EDCB96] mx-4 my-10 font-montserrat grid grid-cols-3 gap-y-9 gap-x-3">
+      <main class="bg-lightbeige mx-4 my-10 font-montserrat grid grid-cols-3 gap-y-9 gap-x-3">
         <div className="introduction">
           <header class="font-bold text-4xl text-center">
             Brief introduction
           </header>
-          <hr class="bg-[#524632] h-0.5 rounded-md border-0 my-2 mx-1" />
+          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-1" />
           <p class="text-center text-md font-semibold leading-tight">
             My name is Muhammad Akbar Ilman Setijadi. I'm 19 years old, majoring
             Information Systems at Institut Teknologi Sepuluh Nopember (10th
@@ -138,31 +32,11 @@ export default function Home() {
           <header class="font-bold text-4xl text-center">
             Projects
           </header>
-          <hr class="bg-[#524632] h-0.5 rounded-md border-0 my-2 mx-1" />
+          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-1" />
           <div className="projects-container flex flex-col gap-y-3">
             {repositories.map((repo) => {
               return (
-                <div className="project duration-200 border-2 border-[#524632] rounded-md flex hover:bg-[#468c49] hover:cursor-pointer hover:-translate-y-1">
-                  <div class="icon-container bg-[#524632] px-1 flex flex-col justify-center">
-                    <img
-                      src="/library-icon.svg"
-                      class="size-8"
-                      alt=""
-                    />
-                  </div>
-                  <div className="project-metadata">
-                    <header class="font-bold ml-2 py-1">
-                      <a href={repo.url} target="_blank">
-                        <u>
-                          {repo.name}
-                        </u>
-                      </a>
-                    </header>
-                    <p class="font-semibold ml-2 py-1">
-                      {repo.desc}
-                    </p>
-                  </div>
-                </div>
+                <ProjectCard name={repo.name} desc={repo.desc} url={repo.url} />
               );
             })}
           </div>
@@ -171,7 +45,7 @@ export default function Home() {
           <header class="font-bold text-4xl text-center">
             Contributions
           </header>
-          <hr class="bg-[#524632] h-0.5 rounded-md border-0 my-2 mx-1" />
+          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-1" />
           <div className="contributions-grid">
             <div className="contribution">
               <img
@@ -189,18 +63,15 @@ export default function Home() {
           <header class="font-bold text-4xl text-center">
             Developer Tools
           </header>
-          <hr class="bg-[#524632] h-0.5 rounded-md border-0 my-2 mx-1" />
+          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-1" />
           <div className="dev-tools-grid grid gap-2 grid-cols-3">
             {developerTools.map((devtool) => {
               return (
-                <a href={devtool.url} target="_blank">
-                  <div className="dev-tool flex flex-col justify-center align-center gap-x-2 border-4 rounded-md border-[#524632] duration-200 hover:bg-[#468c49] hover:text-[#EDCB96] hover:-translate-y-1">
-                    <img src={devtool.iconPath} class="size-8 mx-auto my-0.5" />
-                    <footer class="text-center font-semibold bg-[#524632] text-[#edcb96]">
-                      {devtool.desc}
-                    </footer>
-                  </div>
-                </a>
+                <TechStackCard
+                  iconPath={devtool.iconPath}
+                  desc={devtool.desc}
+                  url={devtool.url}
+                />
               );
             })}
           </div>
@@ -209,21 +80,15 @@ export default function Home() {
           <header class="font-bold text-4xl text-center">
             Languages
           </header>
-          <hr class="bg-[#524632] h-0.5 rounded-md border-0 my-2 mx-1" />
+          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-1" />
           <div className="programming-languages-grid grid gap-2 grid-cols-3">
             {languages.map((language) => {
               return (
-                <a href={language.url} target="_blank">
-                  <div className="programming-language flex flex-col justify-center align-center gap-x-2 border-4 rounded-md border-[#524632] duration-200 hover:bg-[#468c49] hover:text-[#EDCB96] hover:-translate-y-1">
-                    <img
-                      src={language.iconPath}
-                      class="size-8 mx-auto my-0.5"
-                    />
-                    <footer class="text-center font-semibold bg-[#524632] text-[#edcb96]">
-                      {language.desc}
-                    </footer>
-                  </div>
-                </a>
+                <TechStackCard
+                  iconPath={language.iconPath}
+                  desc={language.desc}
+                  url={language.url}
+                />
               );
             })}
           </div>
@@ -232,29 +97,23 @@ export default function Home() {
           <header class="font-bold text-4xl text-center">
             Frameworks
           </header>
-          <hr class="bg-[#524632] h-0.5 rounded-md border-0 my-2 mx-1" />
+          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-1" />
           <div className="frameworks-grid grid gap-2 grid-cols-3">
             {frameworks.map((framework) => {
               return (
-                <a href={framework.url} target="_blank">
-                  <div className="framework-grid flex flex-col justify-center align-center gap-x-2 border-4 rounded-md border-[#524632] duration-200 hover:bg-[#468c49] hover:text-[#EDCB96] hover:-translate-y-1">
-                    <img
-                      src={framework.iconPath}
-                      class="size-8 mx-auto my-0.5"
-                    />
-                    <footer class="text-center font-semibold bg-[#524632] text-[#edcb96]">
-                      {framework.desc}
-                    </footer>
-                  </div>
-                </a>
+                <TechStackCard
+                  iconPath={framework.iconPath}
+                  desc={framework.desc}
+                  url={framework.url}
+                />
               );
             })}
           </div>
         </div>
       </main>
-      <footer class="bg-[#EDCB96] font-montserrat">
+      <footer class="bg-lightbeige font-montserrat">
         <div className="goodbye flex flex-col gap-y-1 justify-center items-center py-1 px-2 ">
-          <p class="copyright text-[#524632] font-semibold py-2">
+          <p class="copyright text-mutebrown font-semibold py-2">
             © 2025 Muhammad Akbar Ilman Setijadi. All rights reserved.
           </p>
           <ul className="more-about flex flex-row gap-x-3">
