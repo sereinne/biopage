@@ -172,6 +172,18 @@ export default function Home() {
             Contributions
           </header>
           <hr class="bg-[#524632] h-0.5 rounded-md border-0 my-2 mx-1" />
+          <div className="contributions-grid">
+            <div className="contribution">
+              <img
+                src="/coming-soon.svg"
+                class="size-16 mx-auto block my-5"
+                alt=""
+              />
+              <p class="font-bold text-4xl text-center">
+                Coming Soon...
+              </p>
+            </div>
+          </div>
         </div>
         <div className="dev-tools">
           <header class="font-bold text-4xl text-center">
