@@ -11,14 +11,14 @@ export default function Home() {
   return (
     <div className="homepage bg-lightbeige">
       <header>
-        <video autoplay loop>
-          <source src="/new-output.mp4" />
+        <video class="max-w-full" autoplay loop>
+          <source src="/introduction.mp4" />
         </video>
       </header>
-      <main class="bg-lightbeige mx-4 my-10 font-montserrat grid grid-cols-3 gap-y-9 gap-x-3">
+      <main class="bg-lightbeige mx-4 my-10 font-montserrat grid grid-cols-1 lg:grid-cols-3 gap-y-9 gap-x-3">
         <div className="introduction">
-          <header class="font-bold text-4xl text-center">
-            Brief introduction
+          <header class="font-bold text-5xl lg:text-4xl text-center">
+            Brief Introduction
           </header>
           <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-1" />
           <p class="text-center text-md font-semibold leading-tight">
@@ -28,7 +28,7 @@ export default function Home() {
             my skill on many technologies out there in order to be versatile.
           </p>
         </div>
-        <div className="projects">
+        <div className="projects my-6 lg:my-0">
           <header class="font-bold text-4xl text-center">
             Projects
           </header>
@@ -41,7 +41,7 @@ export default function Home() {
             })}
           </div>
         </div>
-        <div className="contributions">
+        <div className="contributions my-6 lg:my-0">
           <header class="font-bold text-4xl text-center">
             Contributions
           </header>
@@ -59,12 +59,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="dev-tools">
+        <div className="dev-tools my-6 lg:my-0">
           <header class="font-bold text-4xl text-center">
             Developer Tools
           </header>
-          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-1" />
-          <div className="dev-tools-grid grid gap-2 grid-cols-3">
+          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-8" />
+          <div className="dev-tools-grid grid gap-2 grid-cols-2 lg:grid-cols-3 mx-12">
             {developerTools.map((devtool) => {
               return (
                 <TechStackCard
@@ -76,12 +76,12 @@ export default function Home() {
             })}
           </div>
         </div>
-        <div className="programming-languages">
+        <div className="programming-languages my-6 lg:my-0">
           <header class="font-bold text-4xl text-center">
             Languages
           </header>
-          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-1" />
-          <div className="programming-languages-grid grid gap-2 grid-cols-3">
+          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-8" />
+          <div className="programming-languages-grid grid gap-2 grid-cols-2 lg:grid-cols-3 mx-12">
             {languages.map((language) => {
               return (
                 <TechStackCard
@@ -97,8 +97,8 @@ export default function Home() {
           <header class="font-bold text-4xl text-center">
             Frameworks
           </header>
-          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-1" />
-          <div className="frameworks-grid grid gap-2 grid-cols-3">
+          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-8" />
+          <div className="frameworks-grid grid gap-2 grid-cols-2 lg:grid-cols-3 mx-12">
             {frameworks.map((framework) => {
               return (
                 <TechStackCard
@@ -113,18 +113,18 @@ export default function Home() {
       </main>
       <footer class="bg-lightbeige font-montserrat">
         <div className="goodbye flex flex-col gap-y-1 justify-center items-center py-1 px-2 ">
-          <p class="copyright text-mutebrown font-semibold py-2">
+          <p class="copyright text-mutebrown text-sm lg:text-md font-semibold py-2 mx-5 text-center lg:mx-0 lg:text-left">
             © 2025 Muhammad Akbar Ilman Setijadi. All rights reserved.
           </p>
           <ul className="more-about flex flex-row gap-x-3">
             <li>
               <a href="https://github.com/sereinne" target="_blank">
-                <img src="/github.svg" class="size-8" />
+                <img src="/github.svg" class="size-6 lg:size-8" />
               </a>
             </li>
             <li>
               <a href="mailto:akbarpersonalmode@gmail.com" target="_blank">
-                <img src="/mail.svg" class="size-8" />
+                <img src="/mail.svg" class="size-6 lg:size-8" />
               </a>
             </li>
             <li>
@@ -132,12 +132,12 @@ export default function Home() {
                 href="https://www.linkedin.com/in/muhamnad-akbar-ilman-setijadi-405022246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
               >
-                <img src="/linkedin.svg" class="size-8" />
+                <img src="/linkedin.svg" class="size-6 lg:size-8" />
               </a>
             </li>
             <li>
               <a href="https://instagram.com/akbarilmnn" target="_blank">
-                <img src="/instagram.svg" class="size-8" />
+                <img src="/instagram.svg" class="size-6 lg:size-8" />
               </a>
             </li>
           </ul>

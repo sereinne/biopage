@@ -10,9 +10,9 @@ export function TechStackCard({ iconPath, desc, url }: Technology) {
       <div className="programming-language flex flex-col justify-center align-center gap-x-2 border-4 rounded-md border-mutebrown duration-200 hover:bg-armygreen hover:text-lightbeige hover:-translate-y-1">
         <img
           src={iconPath}
-          class="size-8 mx-auto my-0.5"
+          class="size-6 lg:size-8 mx-auto my-0.5"
         />
-        <footer class="text-center font-semibold bg-mutebrown text-lightbeige">
+        <footer class="text-center text-sm lg:text-md font-semibold bg-mutebrown text-lightbeige">
           {desc}
         </footer>
       </div>
