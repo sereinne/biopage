@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+	--font-jetbrains: "JetBrains Mono", monospace;
+	--font-baskerville: "Libre Baskerville", serif;
+	--color-gruvbox-dark-bg: #2d2d2d; 
+	--color-gruvbox-dark-lighten-bg: #a89984;
+	--color-gruvbox-light-bg: #fbf1c7; 
+	--color-gruvbox-dark-red: #fb4934; 
+	--color-gruvbox-light-red: #9d0006;
+	--color-gruvbox-dark-green: #b8bb26; 
+	--color-gruvbox-light-green: #98971a;
+	--color-gruvbox-dark-yellow: #fabd2f; 
+	--color-gruvbox-light-yellow: #d79921;
+	--color-gruvbox-dark-aqua: #458588;
+	--color-gruvbox-dark-orange: #fe8019;
+	--color-gruvbox-dark-gray: #45556c; 
+}
+
+* {
+	scrollbar-width: none;
+}

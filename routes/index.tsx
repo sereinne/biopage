@@ -1,148 +1,88 @@
-import { ProjectCard } from "../components/ProjectCard.tsx";
-import { TechStackCard } from "../components/TechStackCard.tsx";
-import {
-  developerTools,
-  frameworks,
-  languages,
-  repositories,
-} from "../constants.ts";
+import { define } from "../utils.ts";
+import FeaturedProjects from "../components/FeatureList.tsx";
 
-export default function Home() {
+export default define.page(function Home(ctx) {
+  // the flex is added in .space-header>h1 in order for the emoji to be align horizontally
   return (
-    <div className="homepage bg-lightbeige">
-      <header>
-        <video class="max-w-full" autoplay loop>
-          <source src="/introduction.mp4" />
-        </video>
-      </header>
-      <main class="bg-lightbeige mx-4 my-10 font-montserrat grid grid-cols-1 lg:grid-cols-3 gap-y-9 gap-x-3">
-        <div className="introduction">
-          <header class="font-bold text-5xl lg:text-4xl text-center">
-            Brief Introduction
-          </header>
-          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-1" />
-          <p class="text-center text-md font-semibold leading-tight">
-            My name is Muhammad Akbar Ilman Setijadi. I'm 19 years old, majoring
-            Information Systems at Institut Teknologi Sepuluh Nopember (10th
-            Nopember Institute of Technology), Surabaya. I'm Currently refining
-            my skill on many technologies out there in order to be versatile.
-          </p>
-        </div>
-        <div className="projects my-6 lg:my-0">
-          <header class="font-bold text-4xl text-center">
-            Projects
-          </header>
-          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-1" />
-          <div className="projects-container flex flex-col gap-y-3">
-            {repositories.map((repo) => {
-              return (
-                <ProjectCard name={repo.name} desc={repo.desc} url={repo.url} />
-              );
-            })}
+    <div className="homepage">
+      <video autoplay loop class="max-w-full">
+        <source
+          src="/darkvid.mp4"
+          type="video/mp4"
+          media="(prefers-color-scheme: dark)"
+        />
+        <source
+          src="/lightvid.mp4"
+          type="video/mp4"
+          media="(prefers-color-scheme: light)"
+        />
+      </video>
+      <main class="content flex flex-col gap-x-3 justify-around bg-gruvbox-light-bg dark:bg-gruvbox-dark-bg py-10">
+        <div className="introduction flex gap-x-3">
+          <div className="spacer-header justify-self-center self-center px-15 py-10">
+            <h1 class="font-baskerville flex gap-x-3 text-6xl font-bold text-gruvbox-light-yellow text-center dark:text-gruvbox-dark-yellow">
+              Introduction <span class="align-middle">&#x1F44B;</span>
+            </h1>
           </div>
-        </div>
-        <div className="contributions my-6 lg:my-0">
-          <header class="font-bold text-4xl text-center">
-            Contributions
-          </header>
-          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-1" />
-          <div className="contributions-grid">
-            <div className="contribution">
-              <img
-                src="/coming-soon.svg"
-                class="size-16 mx-auto block my-5"
-                alt=""
-              />
-              <p class="font-bold text-4xl text-center">
-                Coming Soon...
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="dev-tools my-6 lg:my-0">
-          <header class="font-bold text-4xl text-center">
-            Developer Tools
-          </header>
-          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-8" />
-          <div className="dev-tools-grid grid gap-2 grid-cols-2 lg:grid-cols-3 mx-12">
-            {developerTools.map((devtool) => {
-              return (
-                <TechStackCard
-                  iconPath={devtool.iconPath}
-                  desc={devtool.desc}
-                  url={devtool.url}
-                />
-              );
-            })}
-          </div>
-        </div>
-        <div className="programming-languages my-6 lg:my-0">
-          <header class="font-bold text-4xl text-center">
-            Languages
-          </header>
-          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-8" />
-          <div className="programming-languages-grid grid gap-2 grid-cols-2 lg:grid-cols-3 mx-12">
-            {languages.map((language) => {
-              return (
-                <TechStackCard
-                  iconPath={language.iconPath}
-                  desc={language.desc}
-                  url={language.url}
-                />
-              );
-            })}
-          </div>
-        </div>
-        <div className="frameworks">
-          <header class="font-bold text-4xl text-center">
-            Frameworks
-          </header>
-          <hr class="bg-mutebrown h-0.5 rounded-md border-0 my-2 mx-8" />
-          <div className="frameworks-grid grid gap-2 grid-cols-2 lg:grid-cols-3 mx-12">
-            {frameworks.map((framework) => {
-              return (
-                <TechStackCard
-                  iconPath={framework.iconPath}
-                  desc={framework.desc}
-                  url={framework.url}
-                />
-              );
-            })}
+          <div className="spacer-paragraph justify-self-center self-center px-15 py-10">
+            <p class="text-gruvbox-light-green dark:text-gruvbox-dark-green font-jetbrains font-bold text-lg">
+              My name is Muhammad Akbar Ilman Setijadi, and I am currently
+              majoring in Information Systems at Institut Teknologi Sepuluh
+              Nopember. I enjoy building libraries and cross-platform apps with
+              little to no dependencies in order to better understand how they
+              work in detail. At the moment, I’m developing a password manager
+              app called{" "}
+              <a
+                href="https://github.com/sereinne/koentji"
+                class="underline text-gruvbox-dark-red"
+                target="_blank"
+              >
+                <span>&nbsp;</span>Koentji
+              </a>
+              , a GUI password manager based on{" "}
+              <a
+                href="https://passwordstore.org"
+                target="_blank"
+                class="underline text-gruvbox-dark-red"
+              >
+                <span>&nbsp;</span>pass
+              </a>. If you’d like to contact me or take a look at the projects
+              I’ve worked on, feel free to scroll down and follow the links.
+            </p>
           </div>
         </div>
       </main>
-      <footer class="bg-lightbeige font-montserrat">
-        <div className="goodbye flex flex-col gap-y-1 justify-center items-center py-1 px-2 ">
-          <p class="copyright text-mutebrown text-sm lg:text-md font-semibold py-2 mx-5 text-center lg:mx-0 lg:text-left">
-            © 2025 Muhammad Akbar Ilman Setijadi. All rights reserved.
-          </p>
-          <ul className="more-about flex flex-row gap-x-3">
-            <li>
-              <a href="https://github.com/sereinne" target="_blank">
-                <img src="/github.svg" class="size-6 lg:size-8" />
-              </a>
-            </li>
-            <li>
-              <a href="mailto:akbarpersonalmode@gmail.com" target="_blank">
-                <img src="/mail.svg" class="size-6 lg:size-8" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/muhamnad-akbar-ilman-setijadi-405022246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                target="_blank"
-              >
-                <img src="/linkedin.svg" class="size-6 lg:size-8" />
-              </a>
-            </li>
-            <li>
-              <a href="https://instagram.com/akbarilmnn" target="_blank">
-                <img src="/instagram.svg" class="size-6 lg:size-8" />
-              </a>
-            </li>
-          </ul>
-        </div>
+      <FeaturedProjects />
+      <footer className="bg-gruvbox-dark-lighten-bg font-jetbrains flex flex-col justify-center items-center py-3 gap-y-3">
+        <ul class="flex flex-row gap-x-3">
+          <li class="gh-btn">
+            <a href="https://github.com/sereinne" target="_blank">
+              <img src="/github.svg" class="size-6 lg:size-8" />
+            </a>
+          </li>
+          <li class="mail-btn">
+            <a href="mailto:akbarpersonalmode@gmail.com" target="_blank">
+              <img src="/mail.svg" class="size-6 lg:size-8" />
+            </a>
+          </li>
+          <li class="linkedin-btn">
+            <a
+              href="https://www.linkedin.com/in/muhamnad-akbar-ilman-setijadi-405022246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank"
+            >
+              <img src="/linkedin.svg" class="size-6 lg:size-8" />
+            </a>
+          </li>
+          <li class="insta-btn">
+            <a href="https://instagram.com/akbarilmnn" target="_blank">
+              <img src="/instagram.svg" class="size-6 lg:size-8" />
+            </a>
+          </li>
+        </ul>
+        <p class="text-sm text-center text-gruvbox-dark-bg font-semibold">
+          © 2025 Muhammad Akbar Ilman Setijadi. All rights reserved.
+        </p>
       </footer>
     </div>
   );
-}
+});
