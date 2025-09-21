@@ -8,7 +8,7 @@ export default define.page(function App({ Component }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Sereinne</title>
       </head>
-      <body>
+      <body class="h-screen">
         <Component />
       </body>
     </html>

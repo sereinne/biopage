@@ -1,10 +1,11 @@
 import { define } from "../utils.ts";
 import FeaturedProjects from "../components/FeatureList.tsx";
+import Contributions from "../components/Contributions.tsx";
 
 export default define.page(function Home(ctx) {
   // the flex is added in .space-header>h1 in order for the emoji to be align horizontally
   return (
-    <div className="homepage">
+    <div className="homepage h-screen">
       <video autoplay loop class="max-w-full">
         <source
           src="/darkvid.mp4"
@@ -17,9 +18,10 @@ export default define.page(function Home(ctx) {
           media="(prefers-color-scheme: light)"
         />
       </video>
-      <main class="content flex flex-col gap-x-3 justify-around bg-gruvbox-light-bg dark:bg-gruvbox-dark-bg py-10">
+      <main class="content flex flex-col gap-x-3 justify-around bg-gruvbox-light-bg dark:bg-gruvbox-dark-bg h-screen">
+        <hr class="border-gruvbox-light-green dark:border-gruvbox-dark-green rounded-full border-1" />
         <div className="introduction flex gap-x-3">
-          <div className="spacer-header justify-self-center self-center px-15 py-10">
+          <div className="spacer-header justify-self-center self-center px-15">
             <h1 class="font-baskerville flex gap-x-3 text-6xl font-bold text-gruvbox-light-yellow text-center dark:text-gruvbox-dark-yellow">
               Introduction <span class="align-middle">&#x1F44B;</span>
             </h1>
@@ -51,8 +53,10 @@ export default define.page(function Home(ctx) {
             </p>
           </div>
         </div>
+        <hr class="border-gruvbox-light-green dark:border-gruvbox-dark-green rounded-full border-1" />
       </main>
       <FeaturedProjects />
+      <Contributions />
       <footer className="bg-gruvbox-dark-lighten-bg font-jetbrains flex flex-col justify-center items-center py-3 gap-y-3">
         <ul class="flex flex-row gap-x-3">
           <li class="gh-btn">
