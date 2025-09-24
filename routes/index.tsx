@@ -8,26 +8,19 @@ export default define.page(function Home(ctx) {
     <div className="homepage h-screen">
       <video autoplay loop class="max-w-full">
         <source
-          src="/darkvid.mp4"
+          src="/introduction_vid.mp4"
           type="video/mp4"
-          media="(prefers-color-scheme: dark)"
-        />
-        <source
-          src="/lightvid.mp4"
-          type="video/mp4"
-          media="(prefers-color-scheme: light)"
         />
       </video>
-      <main class="content flex flex-col gap-x-3 justify-around bg-gruvbox-light-bg dark:bg-gruvbox-dark-bg h-screen">
-        <hr class="border-gruvbox-light-green dark:border-gruvbox-dark-green rounded-full border-1" />
+      <main class="content flex flex-col gap-x-3 justify-around bg-rhino h-screen">
         <div className="introduction flex gap-x-3">
           <div className="spacer-header justify-self-center self-center px-15">
-            <h1 class="font-baskerville flex gap-x-3 text-6xl font-bold text-gruvbox-light-yellow text-center dark:text-gruvbox-dark-yellow">
+            <h1 class="font-inter flex gap-x-3 text-6xl font-bold text-gruvbox-light-yellow text-center dark:text-gruvbox-dark-yellow">
               Introduction <span class="align-middle">&#x1F44B;</span>
             </h1>
           </div>
           <div className="spacer-paragraph justify-self-center self-center px-15 py-10">
-            <p class="text-gruvbox-light-green dark:text-gruvbox-dark-green font-jetbrains font-bold text-lg">
+            <p class="text-rose font-jetbrains font-bold text-lg">
               My name is Muhammad Akbar Ilman Setijadi, and I am currently
               majoring in Information Systems at Institut Teknologi Sepuluh
               Nopember. I enjoy building libraries and cross-platform apps with
@@ -53,11 +46,10 @@ export default define.page(function Home(ctx) {
             </p>
           </div>
         </div>
-        <hr class="border-gruvbox-light-green dark:border-gruvbox-dark-green rounded-full border-1" />
       </main>
       <FeaturedProjects />
       <Contributions />
-      <footer className="bg-gruvbox-dark-lighten-bg font-jetbrains flex flex-col justify-center items-center py-3 gap-y-3">
+      <footer className="bg-light-rhino font-jetbrains flex flex-col justify-center items-center py-3 gap-y-3">
         <ul class="flex flex-row gap-x-3">
           <li class="gh-btn">
             <a href="https://github.com/sereinne" target="_blank">
@@ -83,7 +75,7 @@ export default define.page(function Home(ctx) {
             </a>
           </li>
         </ul>
-        <p class="text-sm text-center text-gruvbox-dark-bg font-semibold">
+        <p class="text-sm text-center text-rose font-semibold">
           © 2025 Muhammad Akbar Ilman Setijadi. All rights reserved.
         </p>
       </footer>

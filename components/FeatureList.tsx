@@ -1,5 +1,5 @@
 import { Fragment } from "preact";
-import { ProjectCard } from "./ProjectCard.tsx";
+import ProjectCard from "./ProjectCard.tsx";
 
 export interface IconOpts {
   color: string;
@@ -12,7 +12,6 @@ function CliIcon({ color }: IconOpts) {
       fill="none"
       class="size-12 lg:size-16"
       xmlns="http://www.w3.org/2000/svg"
-      style={`filter:drop-shadow(0 5px 5px ${color})`}
     >
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
       <g
@@ -42,7 +41,6 @@ function ShieldIcon({ color }: IconOpts) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       class="size-12 lg:size-16"
-      style={`filter:drop-shadow(0 5px 5px ${color})`}
     >
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
       <g
@@ -66,7 +64,7 @@ function ShieldIcon({ color }: IconOpts) {
 
 export default function FeaturedProjects() {
   const gumDesc = (
-    <p class="font-jetbrains font-semibold text-center text-gruvbox-dark-bg dark:text-gruvbox-dark-green">
+    <p class="font-jetbrains font-semibold  text-light-rose">
       A simple library that contains wrapper functions for{" "}
       <a
         href="https://github.com/charmbracelet/gum"
@@ -78,7 +76,7 @@ export default function FeaturedProjects() {
     </p>
   );
   const koentjiDesc = (
-    <p class="font-jetbrains font-semibold text-center text-gruvbox-dark-bg dark:text-gruvbox-dark-green">
+    <p class="font-jetbrains font-semibold  text-light-rose">
       Free open source passwords manager built using{" "}
       <a
         href="https://github.com/tauri-apps/tauri"
@@ -89,7 +87,7 @@ export default function FeaturedProjects() {
     </p>
   );
   const zigcliDesc = (
-    <p class="font-jetbrains font-semibold text-center text-gruvbox-dark-bg dark:text-gruvbox-dark-green">
+    <p class="font-jetbrains font-semibold text-light-rose">
       a library to create CLI apps in{" "}
       <a
         href="https://github.com/tauri-apps/tauri"
@@ -101,36 +99,63 @@ export default function FeaturedProjects() {
     </p>
   );
   return (
-    <div className="featured-projects flex flex-col gap-y-3 bg-gruvbox-light-bg dark:bg-gruvbox-dark-bg h-screen">
-      <h1 class="text-gruvbox-light-yellow dark:text-gruvbox-dark-yellow font-baskerville font-bold text-6xl text-center">
+    <div className="featured-projects flex justify-center items-center gap-y-3 bg-light-rhino h-screen">
+      <h1 class="text-gruvbox-dark-yellow flex-2 font-inter font-bold text-6xl text-center">
         Featured Projects <span>&#x1F3AF;</span>
       </h1>
-      <div className="three-fav-projects grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-3 px-5 py-20">
+      <div className="three-fav-projects flex flex-1 flex-col gap-y-3 h-full overflow-scroll py-3 pr-3">
         <ProjectCard
           name="gummypy"
-          desc={gumDesc}
-          primColor="#458588"
-          SvgIcon={CliIcon}
-          svgIconOpts={{ color: "#458588" }}
           url="https://github.com/sereinne/gummypy"
+          desc={gumDesc}
+          SvgIcon={CliIcon}
+          iconOpts={{ color: "#ffaabb" }}
         />
         <ProjectCard
           name="koentji"
-          desc={koentjiDesc}
-          primColor="#1db954"
-          SvgIcon={ShieldIcon}
-          svgIconOpts={{ color: "#1db954" }}
           url="https://github.com/sereinne/koentji"
+          desc={koentjiDesc}
+          SvgIcon={ShieldIcon}
+          iconOpts={{ color: "#ffaabb" }}
         />
         <ProjectCard
           name="zigcli"
-          desc={zigcliDesc}
-          primColor="#fe8019"
-          SvgIcon={CliIcon}
-          svgIconOpts={{ color: "#fe8019" }}
           url="https://github.com/sereinne/zigcli"
+          desc={zigcliDesc}
+          SvgIcon={CliIcon}
+          iconOpts={{ color: "#ffaabb" }}
         />
       </div>
     </div>
   );
 }
+
+//const tmp = (
+//	<>
+//	<ProjectCard
+//          name="gummypy"
+//          // desc={gumDesc}
+//          primColor="#458588"
+//          SvgIcon={CliIcon}
+//          svgIconOpts={{ color: "#F7B4AA" }}
+//          url="https://github.com/sereinne/gummypy"
+//        />
+//        <ProjectCard
+//          name="koentji"
+//          // desc={koentjiDesc}
+//          primColor="#1db954"
+//          SvgIcon={ShieldIcon}
+//          svgIconOpts={{ color: "#1db954" }}
+//          url="https://github.com/sereinne/koentji"
+//        />
+//        <ProjectCard
+//          name="zigcli"
+//          // desc={zigcliDesc}
+//          primColor="#fe8019"
+//          SvgIcon={CliIcon}
+//          svgIconOpts={{ color: "#fe8019" }}
+//          url="https://github.com/sereinne/zigcli"
+//        />
+//      </div>
+//	</>
+//)

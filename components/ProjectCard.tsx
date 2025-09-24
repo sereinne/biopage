@@ -1,38 +1,39 @@
-import { FunctionComponent, JSX } from "preact";
+import { FunctionComponent, VNode } from "preact";
 import { IconOpts } from "./FeatureList.tsx";
 
-interface ProjectCardOpts {
+export interface ProjectCardOpts {
   name: string;
-  desc: JSX.Element;
+  desc: VNode;
   url: string;
-  primColor: string;
   SvgIcon: FunctionComponent<IconOpts>;
-  svgIconOpts: IconOpts;
+  iconOpts: IconOpts;
 }
 
-export function ProjectCard(
-  { name, desc, url, primColor, SvgIcon, svgIconOpts }: ProjectCardOpts,
+export default function ProjectCard(
+  { name, desc, url, SvgIcon, iconOpts }: ProjectCardOpts,
 ) {
   return (
-    <div
-      className="project flex flex-col gap-y-2 justify-center items-center px-2 py-1 border-2 rounded-md"
-      style={`border-color:${primColor}`}
-    >
-      <div className="icon">
-        <a href={url}>
-          <SvgIcon {...svgIconOpts} />
+    <div class="project-card border-1 rounded-lg border-light-rose flex">
+      <div className="icon justify-self-center self-center">
+        <a href={url} target="_blank">
+          <SvgIcon {...iconOpts} />
         </a>
       </div>
-      <h1 class="font-baskerville text-gruvbox-dark-bg dark:text-gruvbox-dark-lighten-bg font-semibold text-2xl">
-        {name}
-      </h1>
-      <hr
-        class="h-0.5 rounded-full w-full"
-        style={`background-color:${primColor}`}
-      />
-      <p class="font-jetbrains font-semibold text-lg text-center text-gruvbox-dark-bg dark:text-gruvbox-dark-lighten-bg">
-        {desc}
-      </p>
+      <div className="meta-data border-l-2 border-light-rose px-2 py-1 flex flex-col gap-y-1">
+        <h1 class="font-inter font-bold text-3xl text-light-rose flex justify-between">
+          {name}
+          <div className="hosted flex gap-x-1 justify-center items-center gap-y-1">
+            <p class="flex font-jetbrains text-light-rose text-sm">
+              hosted on:
+            </p>
+            <img src="/github.svg" class="size-4 lg:size-4" alt="" />
+          </div>
+        </h1>
+        <hr class="border-none w-full h-0.5 rounded-full bg-light-rose" />
+        <p class="font-jetbrains font-semibold text-lg text-light-rose">
+          {desc}
+        </p>
+      </div>
     </div>
   );
 }
