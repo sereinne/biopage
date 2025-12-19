@@ -1,17 +1,15 @@
-# Fresh project
+# `create-preact`
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
+<h2 align="center">
+  <img height="256" width="256" src="./src/assets/preact.svg">
+</h2>
 
-### Usage
+<h3 align="center">Get started using Preact and Vite!</h3>
 
-Make sure to install Deno:
-https://docs.deno.com/runtime/getting_started/installation
+## Getting Started
 
-Then start the project in development mode:
+-   `npm run dev` - Starts a dev server at http://localhost:5173/
 
-```
-deno task dev
-```
+-   `npm run build` - Builds for production, emitting to `dist/`. Prerenders app to static HTML
 
-This will watch the project directory and restart as necessary.
+-   `npm run preview` - Starts a server at http://localhost:4173/ to test production build locally
