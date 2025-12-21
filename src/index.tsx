@@ -10,9 +10,61 @@ type Credential = {
   btnName: string;
 };
 
+type RepoBtnContent = {
+  repoUrl: string;
+  repoName: string;
+  repoDesc: string;
+};
+
+function RepoBtn({ repoUrl, repoName, repoDesc }: RepoBtnContent) {
+  return (
+    <a href={repoUrl} draggable={false}>
+      <div class="repo border-3 rounded-lg border-sleek-red bg-sleek-red px-2 py-1">
+        <div class="repo-wrapper-header flex items-center justify-between">
+          <p class="repo-title font-semibold text-3xl text-sleek-gray">
+            {repoName}
+          </p>
+          <div class="hosted-on flex gap-x-2">
+            <code class="text-sleek-gray font-semibold text-xs">
+              Hosted on
+            </code>
+            <img src="/src/assets/github.svg" class="size-4" />
+          </div>
+        </div>
+        <code class="repo-description font-semibold text-sm text-sleek-gray">
+          {repoDesc}
+        </code>
+      </div>
+    </a>
+  );
+}
+
+type ContribBtnContent = {
+  contribName: string;
+  contribUrl: string;
+};
+
+function ContribBtn({ contribName, contribUrl }: ContribBtnContent) {
+  return (
+    <a href={contribUrl} draggable={false}>
+      <div class="contrib-btn bg-sleek-red flex items-center gap-x-5 px-2 py-1 rounded-lg">
+        <p class="font-sleek text-sleek-gray font-semibold text-xl">
+          {contribName}
+        </p>
+        <div class="hosted-on flex gap-x-2">
+          <code class="text-sleek-gray font-semibold text-xs">
+            Hosted on
+          </code>
+          <img src="/src/assets/github.svg" class="size-4" />
+        </div>
+      </div>
+    </a>
+  );
+}
+
 function Contact({ url, imgSource, btnName }: Credential) {
   return (
-    <a href={url}>
+    <a href={url} draggable={false}>
       <div class="instagram flex gap-x-2 text-sleek-gray bg-sleek-red text-sleek font-semibold border-2 px-2 py-2 rounded-lg cursor-pointer">
         <img src={imgSource} class="size-6" />
         <p>
@@ -91,9 +143,54 @@ function Introduction() {
 
 function ReworkFeature() {
   return (
-    <div class="feature h-screen bg-sleek-gray border-t-5 border-sleek-red border-dashed">
-      <p>
-      </p>
+    <div class="features h-screen bg-sleek-gray border-t-5 border-dashed border-sleek-red">
+      <div class="wrapper-repo-contrib flex justify-around mt-5">
+        <div class="repositories flex flex-col gap-y-5">
+          <div class="repo-header-wrapper flex justify-center items-center gap-x-3">
+            <p class="font-sleek text-sleek-gray bg-sleek-red font-semibold text-5xl px-2 pt-1 pb-2 rounded-lg">
+              Repositories
+            </p>
+            <img
+              src="/src/assets/repo.svg"
+              class="size-14 bg-sleek-red px-2 py-1 rounded-lg"
+            />
+          </div>
+          <div class="repo-list flex flex-col gap-y-5">
+            <RepoBtn
+              repoName="gummypy"
+              repoUrl="https://github.com/sereinne/gummypy"
+              repoDesc="A simple library that contains wrapper functions for gum CLI tool"
+            />
+            <RepoBtn
+              repoName="odoo-10-for-macos"
+              repoUrl="https://github.com/sereinne/odoo-10-for-macos"
+              repoDesc="how to set a docker container for running odoo version 10 in MacOS"
+            />
+            <RepoBtn
+              repoName="manimations"
+              repoUrl="https://github.com/sereinne/manimations"
+              repoDesc="source code for all of my manim animations"
+            />
+          </div>
+        </div>
+        <div class="contributions flex flex-col gap-y-5">
+          <div class="contrib-header-wrapper flex justify-center items-center gap-x-3">
+            <p class="font-sleek text-sleek-gray bg-sleek-red font-semibold text-5xl px-2 pt-1 pb-2 rounded-lg">
+              Contributions
+            </p>
+            <img
+              src="/src/assets/pull.svg"
+              class="size-14 bg-sleek-red px-2 py-1 rounded-lg"
+            />
+          </div>
+          <div class="contrib-list flex flex-col gap-y-5">
+            <ContribBtn
+              contribName="DSA Final Project Contribution"
+              contribUrl="https://github.com/NashiwaInsan/asdfinalproject/commit/c89c96c6b1c6ec3be37797bf2b21501fd8e0e625"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
