@@ -4,7 +4,8 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"start": "deno run --allow-net --allow-read main.ts"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.1.18",
