@@ -1,15 +1,14 @@
-# `create-preact`
+# Homepage
 
-<h2 align="center">
-  <img height="256" width="256" src="./src/assets/preact.svg">
-</h2>
+My Personal homepage / bio site.
 
-<h3 align="center">Get started using Preact and Vite!</h3>
+## Development
 
-## Getting Started
+Run the server (make sure you are in the root of the repository)
 
--   `npm run dev` - Starts a dev server at http://localhost:5173/
+```sh
+deno task dev
+```
 
--   `npm run build` - Builds for production, emitting to `dist/`. Prerenders app to static HTML
+Access locally from this url `http://localhost:5173` and start editing your code!
 
--   `npm run preview` - Starts a server at http://localhost:4173/ to test production build locally
