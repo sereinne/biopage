@@ -120,7 +120,10 @@ function Introduction() {
     <main class="portfolio bg-sleek-gray h-screen flex flex-col">
       <div class="introduction flex flex-col justify-center items-center my-auto">
         <div class="introduction-heading flex flex-col items-center gap-y-5">
-          <img src="/assets/calligraphy.svg" class="w-96 h-96" />
+          <img
+            src="/assets/cool_calligraphy.png"
+            class="lg:w-lg lg:h-lg w-2xs h-2xs"
+          />
           <div class="intro-wrapper-waving-hand flex gap-x-5 items-center">
             <p class="text-sleek-red text-8xl font-bold font-sleek text-center">
               Hi!
